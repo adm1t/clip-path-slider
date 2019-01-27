@@ -45,19 +45,24 @@ function updImgClasses(curImg){
 
     currentImg = curImg;
     currentImg.classList = "current-img";
+	
+	switch(curImg){
+		
+		case images[0]:
+		    prevImg.val = images[images.length - 1];
+            nextImg.val = curImg.nextElementSibling;
+            break;
+		
+		case images[images.length - 1]:
+			prevImg.val = curImg.previousElementSibling;
+			nextImg.val = images[0];
+			break;
+			
+		default:
+			prevImg.val = curImg.previousElementSibling;
+			nextImg.val = curImg.nextElementSibling;
+	}
 
-    if (curImg == images[0]){
-        prevImg.val = images[images.length - 1];
-        nextImg.val = curImg.nextElementSibling;
-    }
-    else if (curImg == images[images.length - 1]){
-        prevImg.val = curImg.previousElementSibling;
-        nextImg.val = images[0];
-    }
-    else {
-        prevImg.val = curImg.previousElementSibling;
-        nextImg.val = curImg.nextElementSibling;
-    }
     prevImg.val.classList = "next-left-img";
     nextImg.val.classList = "next-right-img";
 

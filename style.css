@@ -1,80 +1,82 @@
-*::selection{
-    background-color: transparent;
-}
-
 body{
-    background-color: #f8f9fa;
+    margin: 0;
+    user-select: none;
 }
-
-.container{
-    display: flex;
-    justify-content: center;
-    height: 96vh;
+.main-wrapper{
+    position: relative;
 }
 
 .slider{
-    align-self: center;
-    display: flex;
-    justify-content: space-around;
-}
-
-.img-container{
-    max-width: 80%;
     position: relative;
     display: flex;
 }
-
-.img-container img{
-    width: 100%;
-    height: 100%
+.slide{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
-
-.img-container img:not(.current-img){
+.slide:not(.slide_current):not(.slide_next-right):not(.slide_next-left){
     display: none;
 }
 
 .arrow{
-    width: 50px;
-    opacity: 0.55;
     cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 50vw;
+    top: 0;
 }
-
-.arrow-disabled{
+.arrow svg{
+    fill: #ffffff;
+    width: 35px;
+    opacity: 0.55;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.arrow_prev{
+    left: 0;
+}
+.arrow_prev svg{
+    left: 3vw;
+}
+.arrow_next{
+    right: 0;
+}
+.arrow_next svg{
+    right: 3vw;
+}
+.arrow_disabled{
     pointer-events: none;
 }
 
-.img-container img.current-img{
+.slide_current{
     clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 }
-
-.img-container img.next-right-img{
+.slide_next-right{
     clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
     position: absolute;
-    display: unset;
 }
-
-.img-container img.next-left-img{
+.slide_next-left{
     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
     position: absolute;
-    display: unset;
 }
-
-.img-container img.prev-left-item{
+.slide_prev-left{
     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
     transition: all 0.5s;
 }
-
-.img-container img.current-right-item{
+.slide_current-right{
     clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
     transition: all 0.5s;
 }
-
-.img-container img.prev-right-item{
+.slide_prev-right{
     clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
     transition: all 0.5s;
 }
-
-.img-container img.current-left-item{
+.slide_current-left{
     clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
     transition: all 0.5s;
 }

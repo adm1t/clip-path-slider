@@ -2,24 +2,28 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Demo-Slider</title>
+    <title>Clip-path slider</title>
     <script async src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="main-wrapper">
         <div class="slider">
-	    <svg class="arrow left-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"></path></svg>
-            <div class="img-container">
-                <img src="img/1.jpeg">
-                <img src="img/2.jpeg">
-                <img src="img/3.jpeg">
-                <img src="img/4.jpeg">
-                <img src="img/5.jpeg">
-                <img src="img/6.jpeg">
-                <img src="img/7.jpeg">
-            </div>
-	    <svg class="arrow right-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg>
+            <img class="slide slide_current" src="https://picsum.photos/1920/1080?random=1">
+            <img class="slide" src="https://picsum.photos/1920/1080?random=2">
+            <img class="slide" src="https://picsum.photos/1920/1080?random=3">
+            <img class="slide" src="https://picsum.photos/1920/1080?random=4">
+            <img class="slide" src="https://picsum.photos/1920/1080?random=5">
+        </div>
+        <div class="arrow arrow_prev">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257.6 451.8">
+                <path d="M0,225.9c0-8.1,3.1-16.2,9.3-22.4L203.5,9.3c12.4-12.4,32.4-12.4,44.8,0c12.4,12.4,12.4,32.4,0,44.7L76.4,225.9l171.9,171.9c12.4,12.4,12.4,32.4,0,44.7c-12.4,12.4-32.4,12.4-44.7,0L9.3,248.3C3.1,242.1,0,234,0,225.9z"/>
+            </svg>
+        </div>
+        <div class="arrow arrow_next">
+            <svg class="arrow arrow_next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 257.6 451.8">
+                <path d="M248.3,248.3L54,442.6c-12.4,12.4-32.4,12.4-44.7,0c-12.4-12.4-12.4-32.4,0-44.7l171.9-171.9L9.3,54C-3.1,41.7-3.1,21.6,9.3,9.3C21.6-3.1,41.7-3.1,54,9.3l194.3,194.3c6.2,6.2,9.3,14.3,9.3,22.4C257.6,234,254.5,242.1,248.3,248.3z"/>
+            </svg>
         </div>
     </div>
 </body>
